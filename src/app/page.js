@@ -1,12 +1,17 @@
-import React from 'react'
+import NavbarComponent from "@/Components/Navbar";
+import React from "react";
 
 const RootPage = () => {
   return (
-    <div>
-      <h1>First work on backend buddy 🤗</h1>
-      <p>Then start to design your child 👻</p>
-    </div>
-  )
-}
+    <>
+      <div>
+        <NavbarComponent />
+        <div className="container h-96" style={{height:"300vh"}}>
+          Something
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default RootPage
+export default RootPage;
