@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import { Navbar, Link, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
 import { Layout } from "../utilities/Layout";
+import { SwitchDarkMode } from "@/utilities/theme/SwitchDarkMode";
 
 export default function NavbarComponent() {
   const collapseItems = [
@@ -53,6 +54,7 @@ export default function NavbarComponent() {
             },
           }}
         >
+          <SwitchDarkMode />
           <Dropdown placement="bottom-right">
             <Navbar.Item>
               <Dropdown.Trigger>

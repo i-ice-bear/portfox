@@ -1,15 +1,32 @@
-import NavbarComponent from "@/Components/Navbar";
+"use client";
 import React from "react";
+import { createTheme, NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import Home from "./page/Home";
+
+const lightTheme = createTheme({
+  type: "light",
+});
+
+const darkTheme = createTheme({
+  type: "dark",
+});
 
 const RootPage = () => {
   return (
     <>
-      <div>
-        <NavbarComponent />
-        <div className="container h-96" style={{height:"300vh"}}>
-          Something
-        </div>
-      </div>
+      <NextThemesProvider
+        defaultTheme="system"
+        attribute="class"
+        value={{
+          light: lightTheme.className,
+          dark: darkTheme.className,
+        }}
+      >
+        <NextUIProvider>
+          <Home />
+        </NextUIProvider>
+      </NextThemesProvider>
     </>
   );
 };
